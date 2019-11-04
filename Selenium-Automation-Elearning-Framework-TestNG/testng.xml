@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "Uniform Test Suite">
+   <test name = "UFM test">
+      <classes>
+         <class name = "com.training.sanity.tests.LoginForUser" />
+         <class name = "com.training.sanity.tests.UFM_006_ChangePwd" />
+      </classes>
+   </test>
+</suite>	
