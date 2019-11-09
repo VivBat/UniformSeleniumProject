@@ -8,10 +8,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+//POM class to change password for a user
 public class ChangePwd_POM {
+	
+	//vaariables
 	private WebDriver driver; 
 	private String newPWD;
 	
+	//constructor
 	public ChangePwd_POM(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
@@ -34,21 +38,30 @@ public class ChangePwd_POM {
 	private WebElement continueButton;
 	
 	
+	//locating the text confirming the password change
+	@FindBy(css="div.alert-success")
+	private WebElement assertText;
+	
+	
+	//method that takes the user to change password option
 	public void findOptionToChange() {
 		this.changeOption.click();
 	}
 	
+	//method to send new password to the field
 	public void newPassword(String newPass) {
 		this.newPassword.clear();
 		this.newPassword.sendKeys(newPass);
 	}
 	
+	//method to send the new password to the confirm password field
 	public void confirmPassword(String newPass) {
 		this.confirmPassword.clear(); 
 		this.confirmPassword.sendKeys(newPass); 
 		newPWD=newPass;
 	}
 	
+	//method that clicks on continue button once new password has been entered
 	public void clickContinueBtn() {
 		this.continueButton.click(); 
 	}
@@ -57,11 +70,6 @@ public class ChangePwd_POM {
 	public void printNewPassword() {
 		System.out.println(newPWD);
 	}
-	
-	//locating the text confirming the password change
-		@FindBy(css="div.alert-success")
-		private WebElement assertText;
-		
 	
 	//asserting that the text confirming password change has been displayed on screen
 	public void assertTheChange() {

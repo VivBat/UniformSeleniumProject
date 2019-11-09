@@ -11,21 +11,23 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
+import com.training.pom.AddCategory_POM;
+import com.training.pom.EditCategory_POM;
 import com.training.pom.LoginForAdmin_POM;
-import com.training.pom.LoginForUser_POM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-//Test to verify that admin can log in using the correct credentials
-public class UFM_010_Admin_Login {
+//test to edit category//
+public class UNF_039_EditCategory {
 
 	//variables
 	private WebDriver driver;
 	private String adminURL;
 	private LoginForAdmin_POM AUT_loginAdmin;
+	private AddCategory_POM AUT_addCat;
+	private EditCategory_POM AUT_editMeta;
 	private static Properties properties;
-	private ScreenShot screenShot;
-
+	
 	@BeforeClass
 	public static void setUpBeforeClass() throws IOException {
 		properties = new Properties();
@@ -37,8 +39,10 @@ public class UFM_010_Admin_Login {
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		AUT_loginAdmin = new LoginForAdmin_POM(driver); 
+		AUT_addCat = new AddCategory_POM(driver);
+		AUT_editMeta = new EditCategory_POM(driver);
 		adminURL = properties.getProperty("adminURL");
-		screenShot = new ScreenShot(driver); 
+		new ScreenShot(driver); 
 		// open the browser 
 		driver.get(adminURL);
 	}
@@ -48,18 +52,20 @@ public class UFM_010_Admin_Login {
 		Thread.sleep(1000);
 		driver.quit();
 	}
-	
 	@Test
-	public void validLoginTest() {
+	public void EditCategory() {
+		//login with userid and password passed as arguments
+		AUT_loginAdmin.loginForAdminMethod("admin", "admin@123");
 		
-		//calling method from AdminLogin_POM to login
-		AUT_loginAdmin.loginForAdminMethod("admin","admin@123");
+		//go into categories
+		AUT_addCat.goIntoCategories();
 		
-		//asserting the page title after log in
-		AUT_loginAdmin.assertPageTitle();
+		//editing meta tag
+		AUT_editMeta.editMetaTagMethod("new tag");
 		
-		//printing the page title after login
-		AUT_loginAdmin.printPageTitle();
 	}
 }
+
+
+
 

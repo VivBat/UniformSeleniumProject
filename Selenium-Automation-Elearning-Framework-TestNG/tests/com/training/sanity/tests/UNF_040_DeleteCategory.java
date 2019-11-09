@@ -2,6 +2,9 @@ package com.training.sanity.tests;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
@@ -11,21 +14,24 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
+import com.training.pom.AddCategory_POM;
+import com.training.pom.DeleteCategory_POM;
+import com.training.pom.EditCategory_POM;
 import com.training.pom.LoginForAdmin_POM;
-import com.training.pom.LoginForUser_POM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-//Test to verify that admin can log in using the correct credentials
-public class UFM_010_Admin_Login {
+//Test to verify that multiple categories can be deleted at once by admin
+public class UNF_040_DeleteCategory {
 
 	//variables
 	private WebDriver driver;
 	private String adminURL;
 	private LoginForAdmin_POM AUT_loginAdmin;
+	private AddCategory_POM AUT_addCat;
+	private DeleteCategory_POM AUT_deleteCats;
 	private static Properties properties;
-	private ScreenShot screenShot;
-
+	
 	@BeforeClass
 	public static void setUpBeforeClass() throws IOException {
 		properties = new Properties();
@@ -37,8 +43,10 @@ public class UFM_010_Admin_Login {
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		AUT_loginAdmin = new LoginForAdmin_POM(driver); 
+		AUT_addCat = new AddCategory_POM(driver);
+		AUT_deleteCats = new DeleteCategory_POM(driver);
 		adminURL = properties.getProperty("adminURL");
-		screenShot = new ScreenShot(driver); 
+		new ScreenShot(driver); 
 		// open the browser 
 		driver.get(adminURL);
 	}
@@ -50,16 +58,22 @@ public class UFM_010_Admin_Login {
 	}
 	
 	@Test
-	public void validLoginTest() {
+    
+	public void deleteCategory() {
 		
-		//calling method from AdminLogin_POM to login
-		AUT_loginAdmin.loginForAdminMethod("admin","admin@123");
+		//login with userid and password passed as arguments
+		AUT_loginAdmin.loginForAdminMethod("admin", "admin@123");
 		
-		//asserting the page title after log in
-		AUT_loginAdmin.assertPageTitle();
+		//go into categories
+		AUT_addCat.goIntoCategories();
 		
-		//printing the page title after login
-		AUT_loginAdmin.printPageTitle();
+		//delete the desired category
+		AUT_deleteCats.deleteListedItems(Arrays.asList("Uniform", "Zoombox"));
+		AUT_deleteCats.assertMsgCheck();
 	}
 }
+
+
+
+
 

@@ -44,19 +44,12 @@ public class LoginForUser {
 	
 	@AfterMethod
 	public void tearDown() throws Exception {
-//		implicitWait = properties.getProperty("implicitWait");
-//		driver.manage().timeouts().implicitlyWait(implicitWait, TimeUnit.SECONDS);
-//		Thread.sleep(1000);
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		Thread.sleep(1000);
 		driver.quit();
 	}
 	@Test
 	public void validLoginTest() {
-		UFM_006_loginPOM.clickButton1();
-		UFM_006_loginPOM.clickButton2();
-		UFM_006_loginPOM.sendUserName("batsy@cave.com");
-		UFM_006_loginPOM.sendPassword("ghi@123");
-		UFM_006_loginPOM.clickLoginBtn(); 
-		screenShot.captureScreenShot();
+		 //logging to the app first using LoginForUser_POM
+		UFM_006_loginPOM.loginUser("batsy@cave.com", "ghi@123");
 	}
 }

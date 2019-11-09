@@ -16,16 +16,14 @@ import com.training.pom.LoginForUser_POM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-//Test to verify that admin can log in using the correct credentials
-public class UFM_010_Admin_Login {
+//Test to check that the admin cannot login with wrong credentials//
+public class UNF_037_InvalidLogin {
 
 	//variables
 	private WebDriver driver;
 	private String adminURL;
-	private LoginForAdmin_POM AUT_loginAdmin;
+	private LoginForAdmin_POM AUT_loginAdmin;  
 	private static Properties properties;
-	private ScreenShot screenShot;
-
 	@BeforeClass
 	public static void setUpBeforeClass() throws IOException {
 		properties = new Properties();
@@ -38,7 +36,7 @@ public class UFM_010_Admin_Login {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		AUT_loginAdmin = new LoginForAdmin_POM(driver); 
 		adminURL = properties.getProperty("adminURL");
-		screenShot = new ScreenShot(driver); 
+		new ScreenShot(driver); 
 		// open the browser 
 		driver.get(adminURL);
 	}
@@ -48,18 +46,19 @@ public class UFM_010_Admin_Login {
 		Thread.sleep(1000);
 		driver.quit();
 	}
-	
 	@Test
+	//login with invalid credentials//
 	public void validLoginTest() {
 		
-		//calling method from AdminLogin_POM to login
-		AUT_loginAdmin.loginForAdminMethod("admin","admin@123");
+		//calling methods from LoginForAdmin_POM//
 		
-		//asserting the page title after log in
-		AUT_loginAdmin.assertPageTitle();
+		//passing invalid credentials
+		AUT_loginAdmin.loginForAdminMethod("ADBIN", "ajscdaca");
 		
-		//printing the page title after login
-		AUT_loginAdmin.printPageTitle();
+		//method to assert whether error msg displayed on screen
+		AUT_loginAdmin.assertForWrongCreds();
+		
 	}
 }
+
 

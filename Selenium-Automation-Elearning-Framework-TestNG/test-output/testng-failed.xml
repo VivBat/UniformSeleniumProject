@@ -3,14 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.training.sanity.tests.UFM_006_ChangePwd">
+      <class name="com.training.sanity.tests.UNF_040">
         <methods>
-          <include name="changePassword"/>
-          <include name="setUp"/>
           <include name="setUpBeforeClass"/>
-          <include name="tearDown"/>
+          <include name="EditCategory"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- com.training.sanity.tests.UFM_006_ChangePwd -->
+      </class> <!-- com.training.sanity.tests.UNF_040 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

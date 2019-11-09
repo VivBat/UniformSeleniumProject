@@ -17,15 +17,16 @@ import com.training.pom.RemoveFromCart_POM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
+//Test to check that an added item can be removed from the cart
 public class UFM_009_RemoveFromCart {
 
+	//variables
 	private WebDriver driver;
 	private String baseUrl;
-	private AddToCart_POM addToCart;
-	private RemoveFromCart_POM removeFromCart;
+	private AddToCart_POM AUT_addToCart;
+	private RemoveFromCart_POM AUT_removeFromCart;
 	private static Properties properties;
-	private ScreenShot screenShot;
-
+	
 	@BeforeClass
 	public static void setUpBeforeClass() throws IOException {
 		properties = new Properties();
@@ -36,10 +37,10 @@ public class UFM_009_RemoveFromCart {
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
-		addToCart = new AddToCart_POM(driver);
-		removeFromCart = new RemoveFromCart_POM(driver);
+		AUT_addToCart = new AddToCart_POM(driver);
+		AUT_removeFromCart = new RemoveFromCart_POM(driver);
 		baseUrl = properties.getProperty("baseURL");
-		screenShot = new ScreenShot(driver); 
+		new ScreenShot(driver); 
 		// open the browser 
 		driver.get(baseUrl);
 	}
@@ -49,22 +50,20 @@ public class UFM_009_RemoveFromCart {
 		Thread.sleep(1000);
 		driver.quit();
 	}
+	
 	@Test
 	public void removeFromCart() {
 		
-		//first add an item to the cart using addToCart POM
-		addToCart.chooseItem();
-		addToCart.selectSize();
-		addToCart.addToCartBtn();
-		addToCart.assertSuccessMsg();
-		addToCart.printSuccessMsg();
+		//calling method from AddToCart_POM to add an item to cart
+		AUT_addToCart.addedToCart();
 		
-		//remove the added item
-		removeFromCart.cartButton();
-		removeFromCart.viewCart();
-		removeFromCart.removeButton();
-		removeFromCart.assertSuccessMsg();
-		removeFromCart.printSuccessMsg();
+		
+		//calling method from RemoveFromCart_POM to remove the added item
+		AUT_removeFromCart.cartButton();
+		AUT_removeFromCart.viewCart();
+		AUT_removeFromCart.removeButton();
+		AUT_removeFromCart.assertSuccessMsg();
+		AUT_removeFromCart.printSuccessMsg();
 		
 	}
 }

@@ -17,8 +17,10 @@ import com.training.pom.LoginForUser_POM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
+//Test to change the password for a user
 public class UFM_006_ChangePwd {
 
+	//variables
 	private WebDriver driver;
 	private String baseUrl;	
 	private LoginForUser_POM loginToApp;
@@ -51,23 +53,18 @@ public class UFM_006_ChangePwd {
 	}
 	@Test
 	
-	//logging to the app first using Login_POM
+	
 	public void changePassword() {
-	loginToApp.clickButton1();
-	loginToApp.clickButton2();
-	loginToApp.sendUserName("batsy@cave.com");
-	loginToApp.sendPassword("ghi@123");
-	loginToApp.clickLoginBtn(); 
-	
-	
-	//changing the password
-//	public void changePasswordTest() {
-		UFM_006_changePwdPOM.findOptionToChange();;
-		UFM_006_changePwdPOM.newPassword("jkl@123");
-		UFM_006_changePwdPOM.confirmPassword("jkl@123");
-		UFM_006_changePwdPOM.clickContinueBtn();
-//		UFM_006_loginPOM.captureScreenShot();
-		UFM_006_changePwdPOM.assertTheChange();
-		UFM_006_changePwdPOM.printNewPassword();
+		
+	   //logging to the app first using LoginForUser_POM
+	   loginToApp.loginUser("batsy@cave.com", "ghi@123");
+
+	   //calling methods from ChangePwd_POM to change the password
+	   UFM_006_changePwdPOM.findOptionToChange();
+	   UFM_006_changePwdPOM.newPassword("jkl@123");
+	   UFM_006_changePwdPOM.confirmPassword("jkl@123");
+	   UFM_006_changePwdPOM.clickContinueBtn();
+	   UFM_006_changePwdPOM.assertTheChange();
+	   UFM_006_changePwdPOM.printNewPassword();
 	}
 }

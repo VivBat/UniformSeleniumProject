@@ -9,10 +9,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+//POM class to add an item to cart//
 public class AddToCart_POM {
+	
+	//variables
 	private WebDriver driver; 
 	private String assertMsg;
 	
+	//constructor
 	public AddToCart_POM(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
@@ -38,28 +42,50 @@ public class AddToCart_POM {
 	@FindBy(css="div.alert-success")
 	private WebElement successText;
 	
+	
+	//method to choose an item from the catalogue
 	public void chooseItem() {
+		
+		//clicking on premium school uniforms card
 		this.preSchUniCard.click();
+		
+		//clicking on an item to add it to cart
 		this.itemChosen.click();
 	}
 	
+	//method to select a size of the item
 	public void selectSize() {
-		new Select(sizeSelected).selectByValue("964");
+		new Select(sizeSelected).selectByIndex(3);
 	}
 	
+	//method to click on add to cart button
 	public void addToCartBtn() {
 		this.addBtn.click(); 
 	}
 	
+	//method to assert the success msg that is displayed once an item is added to cart
 	public void assertSuccessMsg() {
 		assertMsg = successText.getText().substring(0, 70);
 		assertEquals(assertMsg, "Success: You have added REGULAR T-SHIRTS (Rust) to your shopping cart!"); 
 	}
 	
+	//method to print the success msg
 	public void printSuccessMsg() {
 		 System.out.println("Asserted that msg: "+ assertMsg +"  :displayed on screen"); 
 	}
 	
-
+	//method to do all of the above in one go
+	public void addedToCart() {
+		this.preSchUniCard.click();
+		this.itemChosen.click();
+		new Select(sizeSelected).selectByIndex(3);
+		this.addBtn.click();
+		assertMsg = successText.getText().substring(0, 70);
+		assertEquals(assertMsg, "Success: You have added REGULAR T-SHIRTS (Rust) to your shopping cart!"); 
+	}
+	
 }
+	
+
+
 
