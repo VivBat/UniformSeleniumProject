@@ -1,25 +1,173 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="22457" started-at="2019-11-08T11:11:32Z" finished-at="2019-11-08T11:11:55Z">
+  <suite name="Default suite" duration-ms="86646" started-at="2019-11-11T10:08:35Z" finished-at="2019-11-11T10:10:02Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="22457" started-at="2019-11-08T11:11:32Z" finished-at="2019-11-08T11:11:55Z">
-      <class name="com.training.sanity.tests.UNF_040">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.UNF_040@1a968a59]" name="setUpBeforeClass" is-config="true" duration-ms="26" started-at="2019-11-08T11:11:32Z" finished-at="2019-11-08T11:11:32Z">
+    <test name="Default test" duration-ms="86646" started-at="2019-11-11T10:08:35Z" finished-at="2019-11-11T10:10:02Z">
+      <class name="com.training.sanity.tests.UNF_069">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.UNF_069@e25b2fe]" name="setUpBeforeClass" is-config="true" duration-ms="41" started-at="2019-11-11T10:08:35Z" finished-at="2019-11-11T10:08:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.UNF_040@1a968a59]" name="setUp" is-config="true" duration-ms="14103" started-at="2019-11-08T11:11:32Z" finished-at="2019-11-08T11:11:46Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.UNF_069@e25b2fe]" name="setUp" is-config="true" duration-ms="14604" started-at="2019-11-11T10:08:37Z" finished-at="2019-11-11T10:08:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="EditCategory()[pri:0, instance:com.training.sanity.tests.UNF_040@1a968a59]" name="EditCategory" duration-ms="8294" started-at="2019-11-08T11:11:46Z" finished-at="2019-11-08T11:11:55Z">
+        <test-method status="PASS" signature="addMultipleProducts(java.lang.String, java.lang.String, java.lang.String, double, java.lang.String)[pri:0, instance:com.training.sanity.tests.UNF_069@e25b2fe]" name="addMultipleProducts" duration-ms="7398" started-at="2019-11-11T10:08:51Z" data-provider="UNFTD_008" finished-at="2019-11-11T10:08:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[0.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EditCategory -->
-      </class> <!-- com.training.sanity.tests.UNF_040 -->
+        </test-method> <!-- addMultipleProducts -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.UNF_069@e25b2fe]" name="tearDown" is-config="true" duration-ms="1973" started-at="2019-11-11T10:08:59Z" finished-at="2019-11-11T10:09:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.UNF_069@e25b2fe]" name="setUp" is-config="true" duration-ms="12058" started-at="2019-11-11T10:09:01Z" finished-at="2019-11-11T10:09:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="addMultipleProducts(java.lang.String, java.lang.String, java.lang.String, double, java.lang.String)[pri:0, instance:com.training.sanity.tests.UNF_069@e25b2fe]" name="addMultipleProducts" duration-ms="6432" started-at="2019-11-11T10:09:13Z" data-provider="UNFTD_008" finished-at="2019-11-11T10:09:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Blazer(II-V)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[0.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addMultipleProducts -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.UNF_069@e25b2fe]" name="tearDown" is-config="true" duration-ms="1945" started-at="2019-11-11T10:09:19Z" finished-at="2019-11-11T10:09:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.UNF_069@e25b2fe]" name="setUp" is-config="true" duration-ms="11829" started-at="2019-11-11T10:09:21Z" finished-at="2019-11-11T10:09:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="addMultipleProducts(java.lang.String, java.lang.String, java.lang.String, double, java.lang.String)[pri:0, instance:com.training.sanity.tests.UNF_069@e25b2fe]" name="addMultipleProducts" duration-ms="5939" started-at="2019-11-11T10:09:33Z" data-provider="UNFTD_008" finished-at="2019-11-11T10:09:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Socks]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[socks]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[0.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addMultipleProducts -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.UNF_069@e25b2fe]" name="tearDown" is-config="true" duration-ms="1927" started-at="2019-11-11T10:09:39Z" finished-at="2019-11-11T10:09:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.UNF_069@e25b2fe]" name="setUp" is-config="true" duration-ms="11750" started-at="2019-11-11T10:09:41Z" finished-at="2019-11-11T10:09:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="addMultipleProducts(java.lang.String, java.lang.String, java.lang.String, double, java.lang.String)[pri:0, instance:com.training.sanity.tests.UNF_069@e25b2fe]" name="addMultipleProducts" duration-ms="6946" started-at="2019-11-11T10:09:53Z" data-provider="UNFTD_008" finished-at="2019-11-11T10:10:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Sh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[shirt]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[SHI-201]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[2000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Shirts]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addMultipleProducts -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.UNF_069@e25b2fe]" name="tearDown" is-config="true" duration-ms="1954" started-at="2019-11-11T10:10:00Z" finished-at="2019-11-11T10:10:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.training.sanity.tests.UNF_069 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

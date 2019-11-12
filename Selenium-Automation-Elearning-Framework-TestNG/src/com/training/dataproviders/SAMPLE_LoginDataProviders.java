@@ -9,7 +9,7 @@ import com.training.dao.ELearningDAO;
 import com.training.readexcel.ApachePOIExcelRead;
 import com.training.readexcel.ReadExcel;
 
-public class LoginDataProviders {
+public class SAMPLE_LoginDataProviders {
 
 	@DataProvider(name = "db-inputs")
 	public Object [][] getDBData() {

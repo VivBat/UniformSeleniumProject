@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 import com.training.bean.LoginBean;
 import com.training.dao.ELearningDAO;
-import com.training.dataproviders.LoginDataProviders;
+import com.training.dataproviders.SAMPLE_LoginDataProviders;
 import com.training.generics.GenericMethods;
 import com.training.generics.ScreenShot;
 import com.training.pom.SAMPLE_LoginPOM;
@@ -54,7 +54,7 @@ public class LoginDBTest {
 	}
 
 
-	@Test(dataProvider = "db-inputs", dataProviderClass = LoginDataProviders.class)
+	@Test(dataProvider = "db-inputs", dataProviderClass = SAMPLE_LoginDataProviders.class)
 	public void loginDBTest(String userName, String password) {
 		// for demonstration 
 //		genericMethods.getElement("login", "id"); 
